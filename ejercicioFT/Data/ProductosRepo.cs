@@ -16,6 +16,12 @@ namespace ejercicioFT.Data
             return _productos;
         }
 
+        public Producto ObtenerPorId(int productoId)
+        {
+
+            return _productos.Where(x => x.Id == productoId).FirstOrDefault();
+        }
+
         static ProductosRepo()
         {
 
@@ -26,7 +32,7 @@ namespace ejercicioFT.Data
                     Nombre = "Llave Estriada Nro 8",
                     ControlaStock = true,
                     Habilitado = true,
-                    Precio = 18.50,
+                    Precio = 20.50,
                     TipoId = 1
                 },
                 new Producto {
@@ -34,7 +40,7 @@ namespace ejercicioFT.Data
                     Nombre = "Llave Estriada Nro 10",
                     ControlaStock = true,
                     Habilitado = true,
-                    Precio = 22.00,
+                    Precio = 22.50,
                     TipoId = 1
                 },
                 new Producto {
@@ -42,18 +48,84 @@ namespace ejercicioFT.Data
                     Nombre = "Destornillador Phillips Mediano",
                     ControlaStock = true,
                     Habilitado = true,
-                    Precio = 50.00,
+                    Precio = 8.00,
                     TipoId = 1
+                },
+                new Producto {
+                    Id = 4,
+                    Nombre = "Luz led 50w E27",
+                    ControlaStock = true,
+                    Habilitado = true,
+                    Precio = 2.00,
+                    TipoId = 2
+                },
+                new Producto {
+                    Id = 5,
+                    Nombre = "Ficha 3 patas macho",
+                    ControlaStock = true,
+                    Habilitado = true,
+                    Precio = 3.00,
+                    TipoId = 2
+                },
+                new Producto {
+                    Id = 6,
+                    Nombre = "Tomacorriente de pared para embutir",
+                    ControlaStock = true,
+                    Habilitado = true,
+                    Precio = 15.00,
+                    TipoId = 2
+                },
+                new Producto {
+                    Id = 7,
+                    Nombre = "Pegamento para ceramicos x 1kg",
+                    ControlaStock = true,
+                    Habilitado = true,
+                    Precio = 5.00,
+                    TipoId = 3
+                },
+                new Producto {
+                    Id = 8,
+                    Nombre = "Cuchara albañil nro. 2",
+                    ControlaStock = true,
+                    Habilitado = true,
+                    Precio = 15.00,
+                    TipoId = 3
+                },
+                new Producto {
+                    Id = 9,
+                    Nombre = "Bolsa cemento x 40kg",
+                    ControlaStock = true,
+                    Habilitado = true,
+                    Precio = 30.00,
+                    TipoId = 3
+                },
+                new Producto {
+                    Id = 10,
+                    Nombre = "Manguera reforzada rollo x 50mts",
+                    ControlaStock = true,
+                    Habilitado = true,
+                    Precio = 65.00,
+                    TipoId = 4
+                },
+                new Producto {
+                    Id = 11,
+                    Nombre = "Maceta de arcilla 10lts",
+                    ControlaStock = true,
+                    Habilitado = true,
+                    Precio = 85.00,
+                    TipoId = 4
+                },
+                new Producto {
+                    Id = 12,
+                    Nombre = "Podadora electrica Gamma",
+                    ControlaStock = true,
+                    Habilitado = true,
+                    Precio = 90.00,
+                    TipoId = 4
                 },
 
             };
-        }
-
-            public Producto ObtenerPorId(int productoId)
-        {
-
-            return _productos.Where(x => x.Id == productoId).FirstOrDefault();
-        }
+        }         
 
 
 
