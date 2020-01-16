@@ -16,6 +16,14 @@ namespace ejercicioFT.Data
             return _productos;
         }
 
+
+        public void Agregar(Producto producto)
+        {
+            //Busco el ID mas alto y le sumo uno, para el nuevo ID de producto como una key autoincrementada
+            producto.Id = _productos.Max(x => x.Id)+1;
+            _productos.Add(producto);
+        }
+
         public Producto ObtenerPorId(int productoId)
         {
 
