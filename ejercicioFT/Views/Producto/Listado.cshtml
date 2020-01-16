@@ -1,0 +1,14 @@
+﻿@model ejercicioFT.Data.ProductosRepo
+
+<h2>Lista de productos</h2>
+
+@foreach (var item in Model.ObtenerTodos())
+{
+    if (item.Habilitado)
+    {
+        <div><h2>Nombre: </h2></div>
+        <div>@item.Nombre</div>
+        <div><h2>Precio: </h2></div>
+        <div>@item.Precio</div>
+    }
+}
