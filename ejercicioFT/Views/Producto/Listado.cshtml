@@ -4,11 +4,15 @@
 
 @foreach (var item in Model.ObtenerTodos())
 {
+    //Solo muestra los productos habilitados
     if (item.Habilitado)
     {
-        <div><h3>Nombre: </h3></div>
-        <div>@item.Nombre</div>
+        <div><h2>Nombre: </h2></div>
+        <div><h3>@item.Nombre</h3></div>
         <div><h3>Precio: </h3></div>
-        <div>@item.Precio</div>
+        <div><h3>@item.Precio</h3></div>
+        //Muestra la categoría a la que pertenece
+        <div><h3>Tipo de producto:</h3></div>
+        <div><h3>@ViewBag.ListaOpciones.ObtenerPorId(item.TipoId).Descripcion</h3></div>
     }
-}
+    }

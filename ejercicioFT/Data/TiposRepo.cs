@@ -24,13 +24,13 @@ namespace ejercicioFT.Data
                     Id = 1, Descripcion="Herramientas"                    
                 },
                 new Tipo {
-                    Id = 1, Descripcion="Electricidad"
+                    Id = 2, Descripcion="Electricidad"
                 },
                 new Tipo {                    
-                    Id = 1, Descripcion="Construccion"
+                    Id = 3, Descripcion="Construccion"
                 },
                 new Tipo {
-                    Id = 1, Descripcion="Jardineria"
+                    Id = 4, Descripcion="Jardineria"
                 },
              };
         }

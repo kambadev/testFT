@@ -16,7 +16,9 @@ namespace ejercicioFT.Controllers
         [Route("Productos/")]
         public ActionResult Listado()
         {
-            ViewBag.ListaOpciones = _tiposRepo.ObtenerTodos();
+            //Paso el objeto para poder utilizar los metodos ya que los necesito
+            //para cada articulo que voy listando
+            ViewBag.ListaOpciones = _tiposRepo;
             return View(_productosRepo);
 
         }
