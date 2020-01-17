@@ -12,14 +12,17 @@ namespace ejercicioFT.Controllers
     {
         ProductosRepo _productosRepo = new ProductosRepo();
         TiposRepo _tiposRepo = new TiposRepo();
+        public int ItemsPorPagina { get; set; }
         // GET: Lista
         [Route("Productos/")]
         public ActionResult Listado()
         {
             //Paso el objeto para poder utilizar los metodos ya que los necesito
             //para cada articulo que voy listando
+
             ViewBag.ListaOpciones = _tiposRepo;
             return View(_productosRepo);
+
 
         }
 

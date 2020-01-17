@@ -5,11 +5,9 @@ using System.Web;
 
 namespace ejercicioFT.Models
 {
-    public class OrdenVenta
+    public class Cliente
     {
         public int Id { get; set; }
-        public DateTime FechaEmision { get; set; }
-        public int ClienteId { get; set; }
-        public double Total { get; set; }
+        public string Nombre { get; set; }
     }
 }
