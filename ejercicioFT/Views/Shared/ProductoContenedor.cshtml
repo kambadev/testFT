@@ -1,0 +1,23 @@
+﻿@model ejercicioFT.Models.Producto
+
+    <div class="well">
+
+
+        <h3>
+            <strong>@Model.Nombre</strong>
+
+            <span class="pull-right label label-primary">@Model.Precio.ToString("c")</span>
+        </h3>
+
+        @using (Html.BeginForm("AgregarLinea", "Pedido"))
+        {
+            <div class="pull-right">
+                @Html.HiddenFor(x => x.Id)
+                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                <input type="submit" class="btn btn-success" value="Agregar al pedido" />
+            </div>
+        }
+
+        <span class="lead">Tipo: @ViewBag.ListaOpciones.ObtenerPorId(@Model.TipoId).Descripcion</span>
+
+    </div>

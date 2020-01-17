@@ -1,24 +1,16 @@
-﻿@model ejercicioFT.Data.ProductosRepo
+﻿@model List<ejercicioFT.Models.Producto>
 
-<h2>Lista de productos</h2>
+@{
+    ViewBag.Title = "Lista de Productos";
+}
 
-@foreach (var item in Model.ObtenerTodos())
+@foreach (var item in Model)
 {
     //Solo muestra los productos habilitados
     if (item.Habilitado)
-    { 
-<div class="well">
-    
-    
-    <h3>
-        <strong>@item.Nombre</strong>
-
-        <span class="pull-right label label-primary">@item.Precio.ToString("c")</span>
-    </h3>
-    
-    <span class="lead">Tipo: @ViewBag.ListaOpciones.ObtenerPorId(item.TipoId).Descripcion</span>
+    {
         
-</div>
-    
+        @Html.Partial("ProductoContenedor", item)
+        
     }
-    }
+}

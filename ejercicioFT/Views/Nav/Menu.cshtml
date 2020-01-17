@@ -1,0 +1,8 @@
+﻿
+
+    <a class="btn btn-block btn-default btn-lg" href="~/Productos/">Todos</a>
+
+@foreach (var link in ViewBag.tipos)
+{
+ <a class="btn btn-block btn-default btn-lg" href="~/Productos/Tipo/@link.Id">@link.Descripcion</a>
+}

@@ -1,11 +1,14 @@
 ﻿@model ejercicioFT.Models.Producto
 
-<h2>Detalle de producto:</h2>
+<div class="well">
 
 
-<div><h2>Nombre: </h2></div>
-<div>@Model.Nombre</div>
-<div><h2>Precio: </h2></div>
-<div>@Model.Precio</div>
+    <h3>
+        <strong>@Model.Nombre</strong>
 
+        <span class="pull-right label label-primary">@Model.Precio.ToString("c")</span>
+    </h3>
 
+    <span class="lead">Tipo: @ViewBag.tipo</span>
+
+</div>

@@ -15,13 +15,26 @@ namespace ejercicioFT.Controllers
         public int ItemsPorPagina { get; set; }
         // GET: Lista
         [Route("Productos/")]
+        [Route("")]
         public ActionResult Listado()
         {
             //Paso el objeto para poder utilizar los metodos ya que los necesito
             //para cada articulo que voy listando
 
             ViewBag.ListaOpciones = _tiposRepo;
-            return View(_productosRepo);
+            return View(_productosRepo.ObtenerTodos());
+
+
+        }
+
+        [Route("Productos/Tipo/{categoria}")]
+        public ActionResult Listado(int categoria)
+        {
+            //Paso el objeto para poder utilizar los metodos ya que los necesito
+            //para cada articulo que voy listando
+
+            ViewBag.ListaOpciones = _tiposRepo;
+            return View(_productosRepo.ObtenerPorTipoId(categoria));
 
 
         }
@@ -29,12 +42,14 @@ namespace ejercicioFT.Controllers
         [Route("Producto/{id}")]
         public ActionResult Detalle(string id)
         {
-            ViewBag.ListaOpciones = _tiposRepo.ObtenerTodos();
-            return View(_productosRepo.ObtenerPorId(int.Parse(id)));
+            Producto prod = _productosRepo.ObtenerPorId(int.Parse(id));            
+            ViewBag.tipo = _tiposRepo.ObtenerPorId(prod.TipoId).Descripcion;
+
+            return View(prod);
 
         }
 
-        [Route("Producto/Nuevo")]
+        [Route("Producto/Nuevo")]        
         public ActionResult Nuevo()
         {
 
@@ -49,6 +64,7 @@ namespace ejercicioFT.Controllers
         public ActionResult Nuevo(Producto producto)
         {
             _productosRepo.Agregar(producto);
+            ViewBag.ListaOpciones = _tiposRepo;
             return RedirectToAction("Listado");
         }
 

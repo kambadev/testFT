@@ -30,6 +30,12 @@ namespace ejercicioFT.Data
             return _productos.Where(x => x.Id == productoId).FirstOrDefault();
         }
 
+        public List<Producto> ObtenerPorTipoId(int? tipoId)
+        {
+
+            return _productos.Where(x => x.TipoId == tipoId).ToList();
+        }
+
         static ProductosRepo()
         {
 

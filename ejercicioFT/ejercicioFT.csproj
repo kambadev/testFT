@@ -112,8 +112,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\NavController.cs" />
+    <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Data\ClientesRepo.cs" />
+    <Compile Include="Data\OrdenVentaRepo.cs" />
     <Compile Include="Data\TiposRepo.cs" />
     <Compile Include="Data\ProductosRepo.cs" />
     <Compile Include="Global.asax.cs">
@@ -122,9 +125,7 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\OrdenVenta.cs" />
     <Compile Include="Models\OrdenVentaLinea.cs" />
-    <Compile Include="Models\PagInfo.cs" />
     <Compile Include="Models\Producto.cs" />
-    <Compile Include="Models\ProductosListadoViewModel.cs" />
     <Compile Include="Models\Stock.cs" />
     <Compile Include="Models\Tipo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,6 +148,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Producto\Detalle.cshtml" />
     <Content Include="Views\Producto\Nuevo.cshtml" />
+    <Content Include="Views\Shared\ProductoContenedor.cshtml" />
+    <Content Include="Views\Nav\Menu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -156,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Pedido\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
